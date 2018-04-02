@@ -1,71 +1,95 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>About me | Alex</title>
 
     <meta name="viewport" content="width=device-width"/>
-    <meta charset="UTF-8">
-
-    <link type="text/css" rel="stylesheet" href="css/style.css">
+    <meta charset="utf-8">
+    <title>AlgoJS - Quick sort demo by Alexey Yagelo</title>
+    <link rel="shortcut icon" type="image/png" href="favicon.png"/>
+    <link href="./css/fontawesome-all.min.css" rel="stylesheet">
+    <link href="./css/style.css" rel="stylesheet">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
-    <script src="./js/logic.js"></script>
-    <script src="./js/quickSort.js"></script>
-    <script src="./js/main.js"></script>
+
 </head>
-<body id="top">
-<div id="cv">
-    <div class="mainDetails">
-        <div id="me">
-            <img src="me.jpg" alt="Alex Vishnevsky"/>
+<body>
+
+<div id="top">
+    <div id="cv">
+        <div class="mainDetails">
+            <div id="me">
+                <img src="me.jpg" alt="Alex Vishnevsky"/>
+            </div>
+
+            <div id="name">
+                <h1>Alex Vishnevsky</h1>
+                <h2>Quick Sort</h2>
+            </div>
+
+            <div id="contactDetails">
+                <table>
+                    <tr>
+                        <td>email:</td>
+                        <td><a href="alex.vishneyski@gmail.com" target="_blank">alex.vishneyski@gmail.com</a></td>
+                    </tr>
+                    <tr>
+                        <td>web:</td>
+                        <td><a href="http://www.retro-cams.com">www.retro-cams.com</a></td>
+                    </tr>
+                    <tr>
+                        <td>mobile:</td>
+                        <td><a href="tel:+375293441866">+375293441866</a></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="clear"></div>
         </div>
 
-        <div id="name">
-            <h1>Alex Vishnevsky</h1>
-            <h2>Quick Sort</h2>
-        </div>
+        <div id="mainArea">
+            <section>
+                <div class="script">
+                    <div class="script-section">
+                        <a class="script-section-title" href="#aboutme">Do Quick Sort</a>
+                        <div id="aboutme" class="script-section-content">
+                            <div id="arrayInput">
+                                <div>
+                                    <span>Random array:</span>
+                                    <div id="sourceArray"></div>
+                                    <br>
+                                    <span>Sorted array:</span>
+                                    <div id="currentArray"></div>
 
-        <div id="contactDetails">
-            <table>
-                <tr>
-                    <td>email:</td>
-                    <td><a href="alex.vishneyski@gmail.com" target="_blank">alex.vishneyski@gmail.com</a></td>
-                </tr>
-                <tr>
-                    <td>web:</td>
-                    <td><a href="http://www.retro-cams.com">www.retro-cams.com</a></td>
-                </tr>
-                <tr>
-                    <td>mobile:</td>
-                    <td><a href="tel:+375293441866">+375293441866</a></td>
-                </tr>
-            </table>
-        </div>
-        <div class="clear"></div>
-    </div>
+                                </div>
 
-    <div id="mainArea">
-        <section>
-            <div class="script">
-                <div class="script-section">
-                    <a class="script-section-title" href="#aboutme">Do Quick Sort</a>
-                    <div id="aboutme" class="script-section-content">
-                        <div id="arrayInput">
-                            <div>
-                                <span>Random array:</span>
-                                <div id="sourceArray"></div>
-                                <br>
-                                <span>Sorted array:</span>
-                                <div id="currentArray"></div>
+                            </div>
+                            <div id="content">
+                                <div id="array-data">
+                                    <div class="canvas-block">
+                                        <canvas id="canvas"></canvas>
+                                        <div class="canvas-control-panel">
+                                            <div class="slider-control">
+                                                <div><input id="slider" type="hidden" min="0" max="2000" value="50" oninput="sliderChange()" /></div>
+                                                <div><input type="hidden" name="slider-input" id="sliderInput" value="50" oninput="sliderInputChange()"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+        <div class="clear"></div>
+        </section>
     </div>
-    <div class="clear"></div>
-    </section>
 </div>
 </div>
+
+
+
+
+    <script src="./js/logic.js"></script>
+    <script src="./js/drawing.js"></script>
+    <script src="./js/quickSort.js"></script>
+    <script src="./js/main.js"></script>
 </body>
 </html>

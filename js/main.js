@@ -1,16 +1,24 @@
-var randomArraySizeRange = [5, 15] // [min, max]
-var randomArrayIntRange = [-25, 25] // [min, max]
-var sourceArray;
+var randomArraySizeRange = [6, 90] // [min, max]
+var randomArrayIntRange = [-99, 99] // [min, max]
+var arrayCount = 0;
 
 function fillArray() {
     var inputString = document.getElementById('arrayInput').value;
     var inputArray = inputString.match(/-?\d+(?:\.\d+)?/g);
 
     if (inputArray != null) {
-        sourceArray = getConverArray(inputArray);
-        printArray(sourceArray + "    ", 'sourceArray');
+        document.getElementById('array-data').style.display = 'block';
+        turnOffTimer(true);
+        var array = getConverArray(inputArray);
+        arrayCount = array.length;
+        clearHistory();
+        printArray(array, 'sourceArray');
+        printArray(quickSort(array), 'currentArray');
+
+        setTimer(startAnimation('slider', arrayCount));
     }
 }
+
 function randomFill() {
     var string = '';
     var arraySize = randomInteger(randomArraySizeRange[0], randomArraySizeRange[1]);
@@ -23,8 +31,21 @@ function randomFill() {
     fillArray();
 }
 
-function sortArray() {
-    if (sourceArray != null) {
-        printArray(quickSort(sourceArray) + "    ", 'currentArray');
+
+function sliderChange() {
+    var slider = document.getElementById('slider');
+    var input = document.getElementById('sliderInput');
+
+    if (slider.value != 0) {
+        input.value = slider.value;
+    } else {
+        input.value = 'auto';
     }
+}
+
+function sliderInputChange() {
+    var input = document.getElementById('sliderInput');    
+
+            input.value = 'auto';
+
 }
